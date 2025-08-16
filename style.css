@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  height: 'full';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Title */
+.title {
+  font-size: 2.5em;
+  margin: 20px 10px;
+  animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff, 0 0 20px #ff4081; }
+  to { text-shadow: 0 0 20px #fff, 0 0 40px #ff4081; }
+}
+
+/* Main Container */
+.container {
+  padding: 20px;
+}
+
+/* Main Photo on First Page */
+.main-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  margin: 20px 0;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Message */
+.message {
+  font-size: 1.2em;
+  margin: 20px;
+  line-height: 1.6;
+  background: rgba(0,0,0,0.3);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  background: #ff4081;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+.btn:hover { background: #ff1c68; }
+
+/* Balloons */
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 40px;
+  height: 60px;
+  background: #ff4081;
+  border-radius: 50% 50% 45% 55%;
+  animation: float 6s infinite ease-in;
+}
+.balloon:nth-child(2) { left: 30%; background: #ffd700; animation-duration: 7s; }
+.balloon:nth-child(3) { left: 60%; background: #00e676; animation-duration: 8s; }
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100vh); }
+}
+
+/* Confetti */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: yellow;
+  top: -10px;
+  left: 50%;
+  animation: confettiFall 5s infinite;
+}
+@keyframes confettiFall {
+  from { transform: translateY(0); }
+  to { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* Gallery Page */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+.gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 15px;
+  border: 4px solid white;
+  animation: zoomIn 2s infinite alternate;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.9); }
+  to { transform: scale(1.05); }
+}
+
+/* Final Message */
+.final-message {
+  font-size: 1.8em;
+  margin: 20px;
+  animation: glow 2s infinite alternate;
+}
+
+/* Responsive */
+@media(max-width: 600px) {
+  .title { font-size: 1.8em; }
+  .message { font-size: 1em; }
+  .main-photo { width: 150px; height: 150px; }
+  .gallery img { width: 140px; height: 140px; }
+}
